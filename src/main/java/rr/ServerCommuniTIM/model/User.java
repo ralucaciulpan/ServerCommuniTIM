@@ -1,7 +1,19 @@
 package rr.ServerCommuniTIM.model;
 
+import javax.persistence.*;
 import java.util.Objects;
+@Entity
+@Table(name="users")
 public class User {
+    @Id
+    @SequenceGenerator(
+            name = "user_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            generator = "user_sequence",
+            strategy = GenerationType.SEQUENCE
+    )
     Integer id;
     String username;
     String password;

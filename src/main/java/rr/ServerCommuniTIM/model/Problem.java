@@ -1,6 +1,17 @@
 package rr.ServerCommuniTIM.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="problems")
 public class Problem {
+    @Id
+    @SequenceGenerator(name="problem_sequence", allocationSize = 1)
+    @GeneratedValue(
+            generator = "problem_sequence",
+            strategy = GenerationType.SEQUENCE
+    )
+
     private Long id;
 
     private String category;
