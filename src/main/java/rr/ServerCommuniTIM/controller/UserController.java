@@ -27,9 +27,8 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public void registerUser(){
-        User ralu = new User("ralu","brunojohn","email");
-        userService.registerUser(ralu);
+    public void registerUser(@RequestBody User user){
+        userService.registerUser(user);
     }
     @PostMapping("/login")
     public ResponseEntity loginUser(@RequestBody User user) {
